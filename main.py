@@ -7,7 +7,6 @@ def get_data():
     day = int(difference / helper.Data.sol)
     percentage = math.floor(int(day) / 668 * 100)
     latest = helper.recent_one()
-    print(percentage, latest)
     if str(percentage) != latest:
         return True, day, percentage
     else:
