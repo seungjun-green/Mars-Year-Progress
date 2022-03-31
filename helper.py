@@ -77,7 +77,7 @@ def send_tweet(day, percentage):
     img = create_img(percentage)
     try:
         Data.api.update_status_with_media(text, img)
-        print(f"Successfully tweeted on {datetime.today()}! \n {text}")
+        print(f"Successfully tweeted on {datetime.today()}! \n\n {text}")
 
         if percentage == 100:
             Data.api.update_status("HAPPY NEW YEAR MARS!🥳🎉")

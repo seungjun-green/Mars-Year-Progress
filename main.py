@@ -23,6 +23,7 @@ def tweet(day, percentage):
 if __name__ == "__main__":
     while True:
         moment, day, percentage = get_data()
+        print(moment, day)
         if moment:
             tweet(day, percentage)
         else:
