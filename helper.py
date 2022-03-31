@@ -44,8 +44,8 @@ def recent_one():
 
 def create_img(percentage):
     x = 800
-    y = 100
-    img = Image.new("RGB", (800, 400), (55, 66, 91))
+    y = 10
+    img = Image.new("RGB", (800, 400), (27, 33, 45))
     bar = Image.new("RGB", (760, y), (255, 255, 255))
     progress = Image.new("RGB", (int(760 * float(percentage) / 100), y), (22, 193, 124))
     bar.paste(progress, (0, 0))
