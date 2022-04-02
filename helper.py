@@ -24,23 +24,36 @@ def get_difference():
 
 
 def recent_one():
-    text = Data.api.user_timeline(user_id='@marsyrprogress', count=1)[0]._json['text']
-    word = ""
-    spotted = False
+    # Keep getting the recent one tweet until start of the string is 'Sol'. The return first word of the second line.
 
-    for letter in text:
-        if spotted == False:
-            if letter == '\n':
-                spotted = True
-            else:
-                pass
+    texts = Data.api.user_timeline(user_id='@marsyrprogress', count=5)
+
+    for text in texts:
+        print(f"checking: {text}")
+        text = text._json['text']
+        if text.startswith('Sol'):
+            word = ""
+            spotted = False
+
+            for letter in text:
+                if spotted == False:
+                    if letter == '\n':
+                        spotted = True
+                    else:
+                        pass
+                else:
+                    if letter == ' ':
+                        break
+                    else:
+                        word += letter
+
+            return word[:-1]
         else:
-            if letter == ' ':
-                break
-            else:
-                word += letter
+            pass
 
-    return word[:-1]
+
+
+
 
 def create_img(percentage):
     x = 800
