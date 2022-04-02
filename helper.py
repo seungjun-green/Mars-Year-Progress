@@ -29,7 +29,6 @@ def recent_one():
     texts = Data.api.user_timeline(user_id='@marsyrprogress', count=5)
 
     for text in texts:
-        print(f"checking: {text}")
         text = text._json['text']
         if text.startswith('Sol'):
             word = ""
